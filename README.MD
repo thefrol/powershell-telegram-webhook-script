@@ -21,9 +21,11 @@ Install `Powershell-Yaml` module
     Install-Module Powershell-Yaml
 
 Download `activate-webhook.ps1`
+
     git clone https://github.com/thefrol/powershell-telegram-webhook-script scripts
 
 Initialize it
+
     ./scripts/activate-webhook -Init
 
 Edit `.webhook` file with config
@@ -40,9 +42,11 @@ Edit `.webhook` file with config
 # Usage
 
 To activate Webhook use:
+
     ./scripts/activate-webhook
 
 To deactivate Webhook use:
+
     ./scripts/activate-webhook -Delete
 
 # Environments
