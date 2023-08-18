@@ -8,17 +8,34 @@ When developing a Telegram bot it is useful sometimes to run your bot locally fo
 
 Just configure your token one time and disable/enable webhook in a second
 
-Also! Supports various environments, such as `dev` or `prod`
+Also! 
+
++ Supports various environments, such as `dev` or `prod`
++ And automaticly adds conf files to `.gitignore`
++ Used to update your webhooks if you make a new server
 
 # Install
 
+Install `Powershell-Yaml` module
+
+    Install-Module Powershell-Yaml
+
 Download `activate-webhook.ps1`
-    git clone git@github.com/thefrol/powershell-telegram-webhook-script scripts
+    git clone https://github.com/thefrol/powershell-telegram-webhook-script scripts
 
 Initialize it
     ./scripts/activate-webhook -Init
 
 Edit `.webhook` file with config
+
+    default: dev
+    profiles:
+        dev:
+            token: token_for_develop_bot
+            url: https://your_webhook_url
+        prod:
+            token: token_for_prod_bot
+            url: https://your_webhook_url
 
 # Usage
 
@@ -27,3 +44,9 @@ To activate Webhook use:
 
 To deactivate Webhook use:
     ./scripts/activate-webhook -Delete
+
+# Environments
+
+By default uses `dev` profile, but you can use any. This command will activate `prod` webhook
+
+    ./scripts/activate-webhook prod
