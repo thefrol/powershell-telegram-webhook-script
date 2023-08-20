@@ -6,7 +6,7 @@ Disable and activate webhook for your bot in one command
 
 When developing a Telegram bot it is useful sometimes to run your bot locally for debugging. But to do that a developer should disable the webhook, he must recall its `token`, and api command to do this. This is annoying and stops developer from kindly working. So my project releases this pain. 
 
-Just configure your token one time and disable/enable webhook in a second
+Just configure your token one time and disable/enable webhook in a second. He'll be there when you need it
 
 Also! 
 
