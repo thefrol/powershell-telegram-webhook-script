@@ -9,7 +9,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = '.\Telegram-Webhook.psm1'
+RootModule = './Telegram-Webhook.psm1'
 
 # Version number of this module.
 ModuleVersion = '1.0'
@@ -51,7 +51,7 @@ Description = 'Set webhooks for your Telegram projects in one command'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @("PowerShell-Yaml")
+RequiredModules = @("powershell-yaml")
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
@@ -127,6 +127,6 @@ HelpInfoURI = 'Use Set-Webhook and Delete-Webhook cmdlets, visit official github
 
 # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
 # DefaultCommandPrefix = ''
-
 }
+
 
