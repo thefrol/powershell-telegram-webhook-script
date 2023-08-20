@@ -20,7 +20,7 @@ function Set-Webhook{
         Write-Host "Please, install Powershell-Yaml module with this command:"
         Write-Host "Install-Module Powershell-Yaml" -ForegroundColor Green
         Write-Host ""
-        exit
+        return
     }
 
     #GoGo
@@ -41,12 +41,12 @@ function Set-Webhook{
         Write-Host "Config file created. Now edit $configFile"
         
         Add-Content -Path .gitignore $configFile
-        exit
+        return
     }
 
     if(!(Test-Path $configFile)){
         Write-Host "Config file not found, run this with `"-Init`""
-        exit
+        return
     }
 
     $config=Get-Content $configFile | ConvertFrom-Yaml
