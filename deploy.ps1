@@ -6,25 +6,12 @@ if(!(Test-Path .\.api_key))
 }
 $API_KEY=Get-Content .\.api_key
 
+## еckи появляется ошибка, то надо изменить исходник модуля
+## PowerShellGet  PSModule.psm1
+## $stdOut -match "Пакет `"(.*.nupkg)`" успешно создан" | Out-Null
+## на строке 4633
+## дело в том, что он не улавливает другие языки кроме анлийского, и надо передать ему правильный пакет
+## до этого там было package sucessfully createdd
+Write-Host "If Error on upload read comments in deploy.ps1 script"
 
-Publish-Module -Path $PSScriptRoot -NuGetApiKey $API_KEY
-
-
-# in case of pushlish errors "Failed to Pack" use this
-
-# # find the file having wrong .NET version
-# $path = Get-ChildItem (Get-Module PowerShellGet -ListAvailable).ModuleBase -Recurse -File |
-#     Select-String -Pattern netcoreapp2.0 | ForEach-Object Path
-
-# # unload the module
-# Remove-Module PowerShellGet -Verbose -Force -EA 0
-
-# # update the file
-# $path | ForEach-Object {
-#     (Get-Content -LiteralPath $_ -Raw).Replace('netcoreapp2.0', 'net6') |
-#         Set-Content $_
-# }
-
-# Import-Module PowerShellGet -Force -Verbose
-
-# # now try to publish
+Publish-Module -Name "Telegram-Webhook" -NuGetApiKey $API_KEY 
