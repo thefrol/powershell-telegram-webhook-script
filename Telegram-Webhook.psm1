@@ -1,0 +1,1 @@
+. $PSScriptRoot/activate-webhook.ps1
